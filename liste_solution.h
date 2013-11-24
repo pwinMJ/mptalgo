@@ -12,10 +12,15 @@ struct liste_sol{
 /*
   Alloue de la memoire pour un seul element de la liste
  */
-struct liste_sol * alloue_element(struct liste_sol * l);
+struct liste_sol * alloue_element(struct liste_sol * ls);
 
 /*
-  Ajoute un couple d'indice i,j
-  a la fin de la liste 
+  Ajoute un couple d'indice i,j a la fin de la liste 
+  Renvoie son dernier element de la liste cree
  */
- struct liste_sol * ajoute_element(struct liste_sol l, int i, int j);
+ struct liste_sol * ajoute_element(struct liste_sol ls, int i, int j);
+
+/*
+Affiche les elements de la liste
+*/
+void affiche(struct liste_sol * ls);
