@@ -5,7 +5,7 @@
 
 
 
-int glouton ( char** mots, int nbmots,int m){
+int glouton (char** mots, int nbmots,int m){
   //m: taille de la ligne
   //nbmots : nbmots dans la list
   
