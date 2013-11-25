@@ -5,3 +5,4 @@
   liste_mots est la liste de mots dans l'ordre.
  */
 void affiche_mots(char ** liste_mots, struct liste_sol * ls, int max);
+
