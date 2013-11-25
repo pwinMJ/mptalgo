@@ -18,13 +18,25 @@ struct liste_sol * prog_dyn(char ** liste_mots, int max){
 void affiche_mots(char ** liste_mots, struct liste_sol * ls, int max){
   int i, taille_mot, reste_ligne ,ecrits;
   char buf[max+3];
+  char contour[max+3];
   char * buf_cour;
 
+  for(i = 0; i < max+2; i++){
+    contour[i]= '-';
+  }
+  contour[max+2] = '\n';
+  ecrits = write(STDOUT_FILENO, contour, max+3);
+  if(ecrits < 0){
+    perror("write:affiche_mots()");
+    return;
+  }
+  
   buf[0] = '|';
   buf[max+1] = '|';
   buf[max+2] = '\n';
  
-  
+
+
   while(ls != NULL){
     
     reste_ligne = max;
@@ -58,6 +70,13 @@ void affiche_mots(char ** liste_mots, struct liste_sol * ls, int max){
     ls = ls->suivant;
 
   }
+  
+  ecrits = write(STDOUT_FILENO, contour, max+3);
+  if(ecrits < 0){
+    perror("write:affiche_mots()");
+    return;
+  }
+  
   return;
 }
 
