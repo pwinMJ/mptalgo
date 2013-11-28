@@ -1,8 +1,9 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
-#include "ens_mots.h"
-#include "liste_solution.h"
+
+#include "liste_solution.c"
+#include "liste_mots.c"
 
 #define ESPACE ' '
 #define CHAR_FIN_LIGNE '*'
@@ -42,11 +43,14 @@ void affiche_mots(struct liste_mots * lm, struct liste_sol * ls, int max){
       }
       taille_mot = strlen(lm->mots[i]);
       if(reste_ligne < taille_mot){
-	printf("erreur:affiche_mots(struct liste_mots * , struct liste_sol *, int):");
-	printf("mot trop grand: %s\n", lm->mots[i]);
+	printf("Erreur:affiche_mots():mot trop grand: %s\n", lm->mots[i]);
 	return;
       }
       buf_cour = strncpy(buf_cour, lm->mots[i],taille_mot); 
+      if (buf_cour == NULL){
+	printf("Erreur:affiche_mots(): strncpy()\n");
+	return;
+      }
       reste_ligne -= taille_mot;
       buf_cour += taille_mot;
     }
@@ -56,7 +60,7 @@ void affiche_mots(struct liste_mots * lm, struct liste_sol * ls, int max){
     
     ecrits = write(STDOUT_FILENO, buf, max+3);
     if(ecrits < 0){
-      perror("write:affiche_mots(struct liste_mots * , struct liste_sol *, int)");
+      perror("write:affiche_mots()");
       return;
     }
     
@@ -66,7 +70,7 @@ void affiche_mots(struct liste_mots * lm, struct liste_sol * ls, int max){
   
   ecrits = write(STDOUT_FILENO, contour, max+3);
   if(ecrits < 0){
-    perror("write:affiche_mots(struct liste_mots * , struct liste_sol *, int)");
+    perror("write:affiche_mots()");
     return;
   }
   

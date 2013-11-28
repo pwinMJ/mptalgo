@@ -1,6 +1,6 @@
 struct liste_sol{
-  int i;
-  int j;
+  unsigned int i;
+  unsigned int j;
   struct liste_sol * suivant;
 };
 

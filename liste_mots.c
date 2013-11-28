@@ -5,7 +5,7 @@
 #include<sys/stat.h>
 #include<fcntl.h>
 #include<string.h>
-#include "ens_mots.h"
+
 #define BUFSIZE 8192
 #define DICT_BLOC 1024
 #define LIGNE 1024
