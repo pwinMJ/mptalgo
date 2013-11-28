@@ -8,31 +8,31 @@
 #define ESPACE ' '
 #define CHAR_FIN_LIGNE '*'
 
-void affiche_mots(struct liste_mots * lm, struct liste_sol * ls, int max){
+void affiche_mots(struct liste_mots * lm, struct liste_sol * ls, int m){
   int i, taille_mot, reste_ligne ,ecrits;
-  char buf[max+3];
-  char contour[max+3];
+  char buf[m+3];
+  char contour[m+3];
   char * buf_cour;
 
-  for(i = 0; i < max+2; i++){
+  for(i = 0; i < m+2; i++){
     contour[i]= '-';
   }
-  contour[max+2] = '\n';
-  ecrits = write(STDOUT_FILENO, contour, max+3);
+  contour[m+2] = '\n';
+  ecrits = write(STDOUT_FILENO, contour, m+3);
   if(ecrits < 0){
     perror("write:affiche_mots()");
     return;
   }
   
   buf[0] = '|';
-  buf[max+1] = '|';
-  buf[max+2] = '\n';
+  buf[m+1] = '|';
+  buf[m+2] = '\n';
  
 
 
   while(ls != NULL){
     
-    reste_ligne = max;
+    reste_ligne = m;
     buf_cour = buf+1;
     
     for(i = ls->i; i <= ls->j; i++){
@@ -54,11 +54,11 @@ void affiche_mots(struct liste_mots * lm, struct liste_sol * ls, int max){
       reste_ligne -= taille_mot;
       buf_cour += taille_mot;
     }
-    for(i=(max-reste_ligne)+1; i <= max; i++){
+    for(i=(m-reste_ligne)+1; i <= m; i++){
       buf[i] = CHAR_FIN_LIGNE;
     }
     
-    ecrits = write(STDOUT_FILENO, buf, max+3);
+    ecrits = write(STDOUT_FILENO, buf, m+3);
     if(ecrits < 0){
       perror("write:affiche_mots()");
       return;
@@ -68,7 +68,7 @@ void affiche_mots(struct liste_mots * lm, struct liste_sol * ls, int max){
 
   }
   
-  ecrits = write(STDOUT_FILENO, contour, max+3);
+  ecrits = write(STDOUT_FILENO, contour, m+3);
   if(ecrits < 0){
     perror("write:affiche_mots()");
     return;
