@@ -1,5 +1,4 @@
 
-#include "ens_mots.c"
 #include "affichage.c"
 
 int prog_dyn_rec(char ** liste_mots, int max, int ** val_opt){
