@@ -6,6 +6,7 @@ struct liste_sol{
 
 struct liste_sol * alloue_element(struct liste_sol * ls, int i, int j){
    ls = malloc(sizeof(struct liste_sol));
+   if(ls == NULL) return NULL;
    ls->i = i;
    ls->j = j;
   return ls;
@@ -13,10 +14,10 @@ struct liste_sol * alloue_element(struct liste_sol * ls, int i, int j){
 
 struct liste_sol * ajoute_element(struct liste_sol * ls, int i, int j){
   struct liste_sol * tmp = ls;
- if(ls == NULL){
-   ls = alloue_element(ls,i,j);
-   return ls;
- }
+  if(ls == NULL){
+    ls = alloue_element(ls,i,j);
+    return ls;
+  }
   while(tmp->suivant != NULL){
     
     tmp = tmp->suivant;
