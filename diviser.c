@@ -23,13 +23,14 @@ struct liste_sol * diviser_pour_regner(struct liste_mots *lm, struct liste_sol *
 int main(int argc, char ** argv){  
   struct liste_sol * ls =NULL;
   struct liste_mots * lm=NULL;
-  int i,m = 17;
+  int i,m;
 
-  if(argc<2){
-    printf("arg manquant");
+  if(argc<3){
+    printf("usage: ./diviser <nomfichier> <M>");
     return 0;
   }
 
+  m = atoi(argv[2]);
   lm=cons_liste_mots(lm,argv[1]);
 
   for(i = 0; i < lm->nb; i++){

@@ -46,14 +46,17 @@ struct liste_sol * glouton (struct liste_mots * lm, int m){
 
 
 int main(int argc, char ** argv){
+  struct timeval deb_constr,fin_constr,deb_tri,fin_tri,deb_rech,fin_rech;
+  long long diff;
   struct liste_sol * ls = NULL;
   struct liste_mots * lm = NULL;
-  int m = 11;
+  int m;
 
-  if(argc < 2){
-    printf("usage: ./glouton <nomfichier>\n");
+  if(argc < 3){
+    printf("usage: ./glouton <nomfichier> <M>\n");
     return 0;
   }
+  m = atoi(argv[2]);
 
   lm = cons_liste_mots(lm, argv[1]);
 
