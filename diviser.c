@@ -3,13 +3,13 @@
 #include<string.h>
 #include "affichage.c"
 
-struct liste_sol *  diviser_pour_regner(struct liste_mots *lm, struct liste_sol * ls,int deb,int fin, int m){
+struct liste_sol * diviser_pour_regner(struct liste_mots *lm, struct liste_sol * ls,int deb,int fin, int m){
   int i,som_mots=0;
   
   for(i = deb;i <= fin; i++)
     som_mots += strlen(lm->mots[i]);
   if((som_mots +fin-deb)<=m){
-    
+
     ls=ajoute_element(ls,deb,fin);
     return ls;
   }
@@ -38,6 +38,7 @@ int main(int argc, char ** argv){
   printf("\n");
 
   ls = diviser_pour_regner(lm,ls,0,lm->nb-1,m);
+  printf("\n");
   affiche_sol(ls);
   
   printf("\n");
