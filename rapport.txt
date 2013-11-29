@@ -1,0 +1,42 @@
+Chapitre I - Choix du langage et des algorithmes //TODO
+
+	I.1 : Langage utilisé (+argumentation) //TODO
+		efficacité pour espace mémoire //TODO
+		efficacite au niveau de l'éxécution //TODO
+		pratique pour les ouvertures de fichiers //TODO
+		ensemble de bibliothèque complet //TODO
+	
+	I.2 : Algorithmes utilisés //TODO
+		I.2.a : glouton //MERIEM
+		I.2.b :	diviser pour regner //MERIEM
+		I.2.c : programmation dynamique (top-down)//TODO
+
+Chapitre II - Implémentation //TODO
+
+	II.1 : Arborescence du projet //MERIEM
+
+	II.2 : Contenu des différents fichiers (fonctions et structures) //TODO
+		II.2.a : Presentation générale //MERIEM
+		II.2.b : Affichage (affichage.c) //MERIEM
+		II.2.c : Structure de stokage et fonctions pour les mots d'un fichier (liste_mots.c) //MERIEM
+		II.2.d : Structure de stokage et fonctions pour représenter une solution de mise en page (liste_sol.c) //MERIEM
+		II.2.e : Algorithme glouton //MERIEM
+		II.2.f : Algorithme diviser pour régner //MERIEM
+		II.2.g : Algorithme de programmation dynamique //TODO
+
+	II.3 : Analyse des algorithmes implémentés //TODO
+		II.3.a : Analyse de la complexité en temps //TODO
+		II.3.b : Analyse de la complexité en mémoire //TODO
+		II.3.C : Analyse de l'efficacité de la mise en page //TODO
+
+Chapitre III - Tests //TODO
+
+	III.1 : Matériel utilisé //TODO
+	III.2 : Données utilisées //TODO
+	III.3 : Résultats (graphiques) //MERIEM
+	
+Chapitre IV - Conclusion //TODO
+
+	IV.1 : glouton //MERIEM
+	IV.2 : diviser pour regner //MERIEM
+	IV.3 : programmation dynamique //TODO
