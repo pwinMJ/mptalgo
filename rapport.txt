@@ -64,6 +64,25 @@ autres fichiers:
 			-prend "lm": une liste des mots  
 			       "m": la taille de caractére a inserer par ligne
 		       	-renvoie liste de mots qui sera traiter par affiche_mots pour l'affichage des mots. 
+			
+			-Procedure de l'algorithme :
+
+			on suppose le fichier contient un nombre de caractère ègale taille
+			 si |la longeur des mots de la liste | < m (nbre de caratére désiré par ligne plus les espaces)  
+			     alors on affiche les caractère et on quitte la fonction 
+			     
+			     sinon
+			        soient
+				    somme : une variable qui contient la somme des longueurde mots inférieur à m  ,
+				    espace: contient nombre d'espace à inserer entre les mots tels que :
+				    	    	     espace=(deb :indice du dernier mot de somme)-(fin :indice du premier mot de somme)     
+				 si somme+espace <= m
+				   affiche listes des mots de deb à fin 
+				   et deb= fin ++ ( prend le suivant de liste )
+				   l'operation se répéte tant que on ne rencontre pas un mots dont la longueur supérieur à m 
+				   	       	  	      	  et on n'a pas atteint la fin du fichier    
+   	 
+
 
 		II.2.f : Algorithme diviser pour régner 
 		-Une seul fonction :
