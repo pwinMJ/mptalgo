@@ -48,7 +48,7 @@ struct liste_sol * glouton (struct liste_mots * lm, int m){
 int main(int argc, char ** argv){
   struct liste_sol * ls = NULL;
   struct liste_mots * lm = NULL;
-  int m = 14;
+  int m = 11;
 
   if(argc < 2){
     printf("usage: ./glouton <nomfichier>\n");
@@ -61,7 +61,7 @@ int main(int argc, char ** argv){
 
   printf("lm=%p\n", lm);
   
-    
+  
   ls = glouton(lm, m);
   affiche_sol(ls);
   
