@@ -29,6 +29,8 @@ Chapitre II - Implémentation //TODO
 		II.3.b : Analyse de la complexité en mémoire //TODO
 		II.3.C : Analyse de l'efficacité de la mise en page //TODO
 
+	II.4 : Problèmes rencontrés //MERIEM
+
 Chapitre III - Tests //TODO
 
 	III.1 : Matériel utilisé //TODO
