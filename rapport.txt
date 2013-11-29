@@ -1,3 +1,4 @@
+
 Chapitre I - Choix du langage et des algorithmes //TODO
 
 	I.1 : Langage utilisé (+argumentation) //TODO
@@ -7,21 +8,72 @@ Chapitre I - Choix du langage et des algorithmes //TODO
 		ensemble de bibliothèque complet //TODO
 	
 	I.2 : Algorithmes utilisés //TODO
-		I.2.a : glouton //MERIEM
-		I.2.b :	diviser pour regner //MERIEM
+		I.2.a : glouton : 
+
+		-Consiste a mettre le plus de caractère possible dans chaque ligne.
+		-Insertion des mots un à un jusqu'a arriver au  dernier mot 
+		-L'algorithme prend fin si on arrive a la fin du fichier ou si il existe dans la liste des mots ,un mot superieur 
+		au nombres de carateres de la ligne. 
+
+		I.2.b :	diviser pour regner :
+
+		-On divise la séquence de n mots à afficher sur la ligne en deux ,sous-séquences de n/2 éléments,
+		-On ajoute les mots des sous-séquences dans une liste à l'aide de l'appel récurisf.
+		-On affiche les mots des sous-séquences inferieure ou égale au nombre de caratére par ligne.
+
 		I.2.c : programmation dynamique (top-down)//TODO
 
 Chapitre II - Implémentation //TODO
 
-	II.1 : Arborescence du projet //MERIEM	
+	II.1 : Arborescence du projet
+					
+	       -Makefile  : pour compilation/éxécution fichier
+	       -menu.c    : gestion de tous les algoritmes    
+	       -glouton.c : implementation de l'algorithme Dlouton
+	       -diviser.c : implementation de l'algorithme Diviser pour regner
+	       -prog_dyn.c: implementation de l'algorithme Programmation dynamique et Top-Down Bottom-Up	  
+autres fichiers:
+	       -liste_solution.c
+	       -liste_mots.c
+	       -ens_mots.c
+	       -affichage.c
+	       -creer_fichier.c
+	       
 
 	II.2 : Contenu des différents fichiers (fonctions et structures) //TODO
-		II.2.a : Presentation générale //MERIEM
-		II.2.b : Affichage (affichage.c) //MERIEM
-		II.2.c : Structure de stokage et fonctions pour les mots d'un fichier (liste_mots.c) //MERIEM
-		II.2.d : Structure de stokage et fonctions pour représenter une solution de mise en page (liste_sol.c) //MERIEM
-		II.2.e : Algorithme glouton //MERIEM
-		II.2.f : Algorithme diviser pour régner //MERIEM
+		II.2.a : Presentation générale 
+		  -On a creer  plusieur fichier pour implementer les algorithmes,
+ 		  -
+		II.2.b : Affichage (affichage.c) :
+		-Fonction qui gère l'allignement des mots de chaque ligne et la mise en page .
+		-avec une option qui permet de choisir le caractère de fin de ligne (espace ,*,...) 
+
+		II.2.c : Structure de stokage et fonctions pour les mots d'un fichier (liste_mots.c) 
+
+
+		II.2.d : Structure de stokage et fonctions pour représenter une solution de mise en page (liste_sol.c)
+		-Fonction qui stock dans une liste , la liste des mots traités voici la liste des fonctions utilisés.
+		-struct liste_sol * alloue_element(struct liste_sol * ls, int i, int j): alloue de la memoire pour un seul element de la liste  
+		-struct liste_sol * ajoute_element(struct liste_sol ls, int i, int j)  : ajoute un couple d'indice i,j a la fin de la liste,
+				    			  	    renvoie son dernier element de la liste cree. 
+	        -void affiche_sol(struct liste_sol * ls): affiche les elements de la liste.
+
+		II.2.e : Algorithme glouton : 
+		-Une seul fonction :    
+		     struct liste_sol * glouton (struct liste_mots * lm, int m): 
+			-prend "lm": une liste des mots  
+			       "m": la taille de caractére a inserer par ligne
+		       	-renvoie liste de mots qui sera traiter par affiche_mots pour l'affichage des mots. 
+
+		II.2.f : Algorithme diviser pour régner 
+		-Une seul fonction :
+		     struct liste_sol * diviser_pour_regner(struct liste_mots *lm, struct liste_sol * ls,int deb,int fin, int m)
+			-prend "lm" : une liste des mots  
+			       "ls" : la taille de caractére a inserer par ligne
+			       "deb":l'indice du premier mots de la liste
+			       "fin":l'indice du dernier mots de la liste
+			       "m"  :la taille de caractére a inserer par ligne
+			 -renvoie la liste de mots a affichés.
 		II.2.g : Algorithme de programmation dynamique //TODO
 
 	II.3 : Compilation et éxécution //TODO
@@ -33,7 +85,14 @@ Chapitre II - Implémentation //TODO
 		II.3.b : Analyse de la complexité en mémoire //TODO
 		II.3.C : Analyse de l'efficacité de la mise en page //TODO
 
-	II.6 : Problèmes rencontrés //MERIEM
+	II.6 : Problèmes rencontrés
+	Diviser pour régner:  
+ 		-problème rencontrer au niveau des récurssion qui me provoqué des boucle infinie 
+	        -ou affichage des mots en desordre .	        
+
+
+
+
 
 Chapitre III - Tests //TODO
 
@@ -43,6 +102,7 @@ Chapitre III - Tests //TODO
 	
 Chapitre IV - Conclusion //TODO
 
-	IV.1 : glouton //MERIEM
-	IV.2 : diviser pour regner //MERIEM
+	IV.1 : glouton : Malgré que la compléxité soit lignaire mais l'algorithme n'est pas optimale(nombre d'espace n'est pas optimale) .
+
+	IV.2 : diviser pour regner :Malgré que la compléxité soit lignaire mais l'algorithme n'est pas optimale(nombre d'espace n'est pas optimale) .
 	IV.3 : programmation dynamique //TODO
