@@ -15,7 +15,9 @@ Chapitre II - Implémentation //TODO
 
 	II.1 : Arborescence du projet //MERIEM
 
-	II.2 : Contenu des différents fichiers (fonctions et structures) //TODO
+	II.2 : Compilation et éxécution //TODO
+
+	II.3 : Contenu des différents fichiers (fonctions et structures) //TODO
 		II.2.a : Presentation générale //MERIEM
 		II.2.b : Affichage (affichage.c) //MERIEM
 		II.2.c : Structure de stokage et fonctions pour les mots d'un fichier (liste_mots.c) //MERIEM
@@ -24,12 +26,12 @@ Chapitre II - Implémentation //TODO
 		II.2.f : Algorithme diviser pour régner //MERIEM
 		II.2.g : Algorithme de programmation dynamique //TODO
 
-	II.3 : Analyse des algorithmes implémentés //TODO
+	II.4 : Analyse des algorithmes implémentés //TODO
 		II.3.a : Analyse de la complexité en temps //TODO
 		II.3.b : Analyse de la complexité en mémoire //TODO
 		II.3.C : Analyse de l'efficacité de la mise en page //TODO
 
-	II.4 : Problèmes rencontrés //MERIEM
+	II.5 : Problèmes rencontrés //MERIEM
 
 Chapitre III - Tests //TODO
 
